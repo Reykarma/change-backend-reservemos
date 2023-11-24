@@ -14,7 +14,7 @@ class Api::DestinationWeatherController < ApplicationController
     weather_api = OpenWeather.new
     cities = reservamos_api.get_cities
   
-    cities.map {|city| city_object(city, weather_api) }
+    cities.map { |city| city_object(city, weather_api) }
   end 
 
   def city_object(city, weather_api)

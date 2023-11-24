@@ -8,7 +8,7 @@ class OpenWeather
     require "net/http"
     require 'json'
 
-    url = URI("https://api.openweathermap.org/data/2.5/onecall?lat=#{latitude}&lon=#{longitud}&exclude=current,minutely,hourly,alerts&appid=#{@api_key}")
+    url = URI("https://api.openweathermap.org/data/2.5/onecall?lat=#{latitude}&lon=#{longitud}&units=metric&exclude=current,minutely,hourly,alerts&appid=#{@api_key}")
 
     https = Net::HTTP.new(url.host, url.port)
     https.use_ssl = true

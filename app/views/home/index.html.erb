@@ -1,2 +1,52 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumir API Destination Weather</title>
+</head>
+<body>
+
+<h1>Consumir la API de Destination Weather</h1>
+
+<h2>Descripción</h2>
+<p>La API proporciona información del clima para una ciudad específica.</p>
+
+<h2>Endpoint</h2>
+<ul>
+    <li><strong>URL:</strong> <code>http://127.0.0.1:3000/api/destination_weather</code></li>
+    <li><strong>Método:</strong> <code>GET</code></li>
+    <li><strong>Parámetro:</strong> <code>city</code> (Nombre de la ciudad)</li>
+</ul>
+
+<h2>Ejemplo de Uso</h2>
+<ol>
+    <li>Realiza una solicitud GET a la URL especificada, proporcionando el nombre de la ciudad como parámetro.</li>
+    <p><strong>Ejemplo utilizando cURL:</strong></p>
+    <pre><code>curl http://127.0.0.1:3000/api/destination_weather?city=NombreDeLaCiudad</code></pre>
+    <li>La API responderá con datos relacionados con el clima para la ciudad especificada.</li>
+</ol>
+
+<h2>Respuesta de Ejemplo</h2>
+<pre><code>{
+  "data": [
+    {
+      "state": "Estado",
+      "city_name": "Nombre de la Ciudad",
+      "weather":[
+        {
+          "date":"2023-11-25T12:00:00.000-06:00",
+          "description":"clear sky",
+          "max_temperature":302.83,
+          "min_temperature":287.47
+        }
+      ]
+    },
+  ]
+}</code></pre>
+
+<p><strong>Nota:</strong> Asegúrate de proporcionar un nombre de ciudad válido como valor para el parámetro "city".</p>
+
+</body>
+</html>
