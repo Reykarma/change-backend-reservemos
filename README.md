@@ -1,24 +1,41 @@
-# README
+# Comandos Básicos para Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Instalar las Dependencias
+```bash
+bundle install
+rails server
 
-Things you may want to cover:
+# Consumir la API
 
-* Ruby version
+## Descripción
+La API proporciona información del clima para una ciudad específica o ciudades similares a tu busqueda.
 
-* System dependencies
+## Endpoint
+- **URL:** http://127.0.0.1:3000/api/destination_weather
+- **Método:** GET
+- **Parámetro:** city (Nombre de la ciudad)
 
-* Configuration
+## Ejemplo de Uso
+1. Realiza una solicitud GET a la URL especificada, proporcionando el nombre de la ciudad como parámetro.
+   - Ejemplo utilizando cURL:
+   ```bash
+   curl http://127.0.0.1:3000/api/destination_weather?city=NombreDeLaCiudad
 
-* Database creation
+## Respuesta de ejemplo
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+{
+  "data": [
+    {
+      "state": "Estado",
+      "city_name": "Nombre de la Ciudad",
+      "weather": [
+        {
+          "date":"2023-11-25T12:00:00.000-06:00",
+          "description":"clear sky",
+          "max_temperature":302.83,
+          "min_temperature":287.47
+        }
+      ]
+    },
+  ]
+}
